@@ -2,7 +2,7 @@ import os
 import binascii
 import httpx
 import json
-from docx import Document
+# from docx import Document
 
 #这个API对上传PDF大小有限制，应该是100MB，建议直接在Adobe中导出
 def export_pdf_into_docx(pdf_file_path,client_id,client_secret,save_file_path):
@@ -67,12 +67,12 @@ def download_file(download_uri, target_path):
             print(f"Unable to download the file. Status code: {response.status_code}")
 
 if(__name__=='__main__'):
-    client_id='1ca9f34f3c024d239cf197a7d645474c'
+    client_id='0b4bb1037241b0f4f8b401beb6192723'
     client_secret='p8e-RU6GcN0O_2WPcXuESNHhNgqmZga-Lmws'
-    upload_pdf_path='../book/'    # replace   
+    upload_pdf_path='/workspaces/MM-Retinal/Dataset_Collection/book/1/1024000/'    # replace   
     upload_pdf_file='6d125ef88ace39bc69d6613d27465f12.pdf'            # replace
     save_file_path='../word/'     # replace 
-    save_docx_file='6d125ef88ace39bc69d6613d27465f12.docx'            # replace
+    save_docx_file='0b4bb1037241b0f4f8b401beb6192723.docx'            # replace
     export_pdf_into_docx(upload_pdf_path+upload_pdf_file,client_id,client_secret,save_file_path+save_docx_file)
 
     
